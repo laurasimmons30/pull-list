@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-   root 'comics#index'
-   resources :comics, only: [:index]
+  get '/auth/:provider/callback', to: 'sessions#create'
+  delete '/sign_out', to: 'sessions#destroy'
+  root 'comics#index'
+  resources :comics, only: [:index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,1 +1,14 @@
-<h1>Comics Homepage working?</h1>
+<h1>Comics for the Week of <%= DateTime.now %></h1>
+
+<table>
+  <% @this_week_comics.each do |key, value| %>
+    <tr>
+      <th><%= key %></th>
+    </tr>
+      <% value.each do |title, url| %>
+          <tr>
+            <td><%= link_to title, url %></td>
+          </tr>
+        <% end %>     
+  <% end %>
+</table>

@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PullList</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>My Pull List</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <ul class="top-bar-section">
+          <% if signed_in? %> 
+            <%= current_user.username %></a></li>
+            <%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign In With Twitter', '/auth/twitter' %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 
-<%= yield %>
+    <p id="notice">
+      <%= flash[:notice] %>
+    </p>
 
-</body>
+    <%= yield %>
+
+  </body>
 </html>
