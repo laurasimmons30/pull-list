@@ -6,12 +6,31 @@ class ComicVine
   end
 
   def base_call(resources)
-    "#{base_url}/#{resources}/"
+    "#{base_url}/#{resources}/?api_key=#{ENV['COMICVINEKEY']}"
   end
 
   def issues(options='')
-
-    HTTParty.get(base_call('issues'), "api_key=#{ENV['COMICVINEKEY']}")
+    HTTParty.get(base_call('issues') + options)
   end
 
+  def id_arrays(call)
+    y = call["results"]
+    array = y.map {|row| row.values}
+  end
+
+  def volume_ids
+    #returns array of ids and volumes [[773, "Superman"],[776, "Magic Comics"]]
+    call = base_call("volumes")+"/field_list=id,name&format=json"
+    volume = id_arrays(call)
+  end
+
+  def publisher_ids
+    call = base_call("publishers")+"/field_list=id,name&format=json"
+    publishers = id_arrays(call)
+  end
+
+  def issue_info
+    call = base_call("issues")+"/field_list=id,name&format=json"
+    call = HTTParty.get("http://www.comicvine.com/api/issues?api_key=96c05be8131206ff5edd56dbdb9949ad7652dbf8&field_list=id,name,issue_number,description,image&filter=volume:#{volume.id}")
+  end
 end
