@@ -1,0 +1,15 @@
+<div class='add-comic-form'>
+  <div id="comic-form-title">Search for Titles to Follow</div>
+  <%= form_tag("/comics/search", method: "get", remote:true) do %>
+    <%= label_tag(:comic_name, "Enter Name:") %>
+    <%= text_field_tag(:comic_name) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+<div class="comics-list">
+</div>
+
+<div class="link-back">
+  <%= link_to "<< Back to this week's comics", comics_path %>
+</div>

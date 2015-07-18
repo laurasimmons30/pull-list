@@ -1,14 +1,26 @@
-<h1>Comics for the Week of <%= DateTime.now %></h1>
+<div class="weekly-subscriptions">
+  <!-- <#% if subscriptions_this_week? %> -->
+    <!-- <#% @subscriptions.each do |title| %> -->
+      <!-- <#%= title %> -->
+  <!-- <#% else %> -->
+    <p>You don't have any subscriptions this week</p>
+    <%= link_to 'Add to Pull List', new_comic_path %>
+  <!-- <#% end %> -->
+</div>
 
-<table>
-  <% @this_week_comics.each do |key, value| %>
-    <tr>
-      <th><%= key %></th>
-    </tr>
-      <% value.each do |title, url| %>
-          <tr>
-            <td><%= link_to title, url %></td>
-          </tr>
-        <% end %>     
-  <% end %>
-</table>
+<div class="weekly-comics">
+  <h1>Comics for the Week of </h1>
+
+  <table>
+    <% @this_week_comics.each do |key, value| %>
+      <tr>
+        <th><%= key %></th>
+      </tr>
+        <% value.each do |title, url| %>
+            <tr>
+              <td><%= link_to title, url %></td>
+            </tr>
+          <% end %>     
+    <% end %>
+  </table>
+</div>
