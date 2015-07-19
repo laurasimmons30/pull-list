@@ -1,11 +1,5 @@
 <div class="weekly-subscriptions">
-  <!-- <#% if subscriptions_this_week? %> -->
-    <!-- <#% @subscriptions.each do |title| %> -->
-      <!-- <#%= title %> -->
-  <!-- <#% else %> -->
-    <p>You don't have any subscriptions this week</p>
-    <%= link_to 'Add to Pull List', new_comic_path %>
-  <!-- <#% end %> -->
+  <%= render partial: 'user_subscription' if signed_in? %>
 </div>
 
 <div class="weekly-comics">

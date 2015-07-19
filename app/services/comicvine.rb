@@ -28,6 +28,21 @@ class Comicvine
     end
   end
 
+  def volume(id, options="")
+    url = base_call("volume/4050-#{id}") + "&field_list=last_issue&format=json" + options
+    HTTParty.get(url)["results"]
+  end
+
+  def issue(id, options="")
+    url = base_call("issue/4000-#{id}") + "&format=json" + options
+    HTTParty.get(url)["results"]
+  end
+
+  def get_last_issue_for_volume(id)
+    issue_id = volume(id)["last_issue"]["id"]
+    issue(issue_id, '&field_list=name,store_date,image,description')
+  end
+
   def publisher_ids
     call = HTTParty.get(base_call("publishers")+"&field_list=id,name&format=json")
     publishers = id_arrays(call)

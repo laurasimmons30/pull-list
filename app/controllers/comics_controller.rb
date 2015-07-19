@@ -1,19 +1,24 @@
 class ComicsController < ApplicationController
   def index
-    #response = HTTParty.get("http://www.comicvine.com/api/issues?api_key=#{ENV['COMICVINEKEY']}")
-    x = Comicscraper.new
+    comicscraper = Comicscraper.new
+    comicvine = Comicvine.new
+
     array = ['MARVEL COMICS','DARK HORSE COMICS','DC COMICS','IDW PUBLISHING','IMAGE COMICS','BOOM! STUDIOS']
-    @this_week_comics = x.new_comics_for_week('this-week', array)
-    #HTTParty.get()
-    # http://beta.comicvine.com/api/THING/THING_ID?api_key=ENV["COMICVINEKEY"]
+    @this_week_comics = comicscraper.new_comics_for_week('this-week', array)
+    @comics = current_user.comics if signed_in?
   end
 
   def create
     comic_volume_info.each do |info|
-      id, name = info.split('---')
-      binding.pry
+      id, name = info.split('---')      
+      comic = Comic.find_or_create_by(name: name, api_key: id)
+      current_user.comics << comic
     end
+    redirect_to comics_path
+  end
 
+  def info
+    @comic = Comic.find(params[:id])
   end
 
   def search

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'comics#index'
   resources :comics, only: [:index, :new, :create]
   get '/comics/search', to: 'comics#search'
+  get 'comics/info/:id', to: 'comics#info'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
