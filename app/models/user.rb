@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def comic_date(date)
-    if date.cwday < 4 || date.cwday == 7
+    if date.cwday < 4
       while !date.wednesday?
         date = date.next_day
       end

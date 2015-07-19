@@ -40,7 +40,7 @@ class Comicvine
 
   def get_last_issue_for_volume(id)
     issue_id = volume(id)["last_issue"]["id"]
-    issue(issue_id, '&field_list=name,store_date,image,description')
+    issue(issue_id, '&field_list=name,store_date,image,description,volume,issue_number')
   end
 
   def publisher_ids

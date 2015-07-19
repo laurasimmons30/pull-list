@@ -1,6 +1,23 @@
-<div class="this-week's-pull-list">
- <% binding.pry %>
+<div class="my-sub-title">
+  <h1>Your Titles Coming Out This Week</h1>
 </div>
 
-<p>You don't have any subscriptions this week</p>
+<% current_user.this_weeks_comics.each do |comic| %>
+  <div class="subscription-comic">
+    <div class="comic-image">
+      <img src="<%= comic["image"]["thumb_url"] %>" />
+    </div>
+    <div class="comic-vol-name">
+      <%= "#{comic["volume"]["name"]} - #{comic["issue_number"]}"%>
+    </div>
+    <div class="comic-issue-name">
+      <%= comic["name"] %>
+    </div>
+    <div class="comic-description">
+      <%= strip_tags(comic["description"]) %>
+    </div>
+  </div>
+<% end %>
+
+<%= "You don't have any subscriptions this week" if !current_user.this_weeks_comics %>
 <%= link_to 'Add to Pull List', new_comic_path %>

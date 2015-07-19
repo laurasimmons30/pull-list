@@ -12,7 +12,7 @@ class ComicsController < ApplicationController
     comic_volume_info.each do |info|
       id, name = info.split('---')      
       comic = Comic.find_or_create_by(name: name, api_key: id)
-      current_user.comics << comic
+      Usercomic.find_or_create_by(user_id: current_user.id, comic_id: comic.id)
     end
     redirect_to comics_path
   end
