@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :comics, only: [:index, :new, :create]
   get '/comics/search', to: 'comics#search'
   get 'comics/info/:id', to: 'comics#info'
+  get 'comics/pull_list', to: 'comics#pull_list'
+  get '/comics/pull_list/:id', to: 'comics#pull_list_show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

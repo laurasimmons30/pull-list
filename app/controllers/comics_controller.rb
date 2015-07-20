@@ -21,6 +21,14 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params[:id])
   end
 
+  def pull_list
+    @comics = current_user.comics
+  end
+
+  def pull_list_show
+    binding.pry
+  end
+
   def search
     query = params[:comic_name]
     comicvine = Comicvine.new
