@@ -26,7 +26,10 @@ class ComicsController < ApplicationController
   end
 
   def pull_list_show
-    binding.pry
+    @comic = Comic.find(params["id"])
+    comicvine = Comicvine.new
+    @comic_info = comicvine.issue_info(@comic.api_key.to_i)
+    @comic_info = @comic_info["response"]["results"]["issue"]
   end
 
   def search

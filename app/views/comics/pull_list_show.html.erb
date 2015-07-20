@@ -1,0 +1,18 @@
+<h1><%= @comic.name %></h1>
+
+<% @comic_info.each do |info| %>
+  <div class="subscription-comic">
+    <div class="comic-image">
+      <img src="<%= info["image"]["thumb_url"] %>" />
+    </div>
+    <div class="comic-issue-number">
+      <%= "##{info["issue_number"]}" %>
+    </div>
+    <div class="comic-issue-name">
+      <%= info["name"] %>
+    </div>
+    <div class="comic-description">
+      <%= strip_tags(info["description"]) %>
+    </div>
+  </div>
+<% end %>

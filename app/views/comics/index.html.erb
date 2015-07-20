@@ -3,7 +3,7 @@
 </div>
 
 <div class="weekly-comics">
-  <h1>Comics for the Week of <%= current_user.comic_date(Date.today) %></h1>
+  <h1>Comics for the Week of <%= Comic.comic_date(Date.today) %></h1>
 
   <table>
     <% @this_week_comics.each do |key, value| %>

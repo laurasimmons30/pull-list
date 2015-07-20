@@ -48,8 +48,7 @@ class Comicvine
     publishers = id_arrays(call)
   end
 
-  def issue_info
-    call = base_call("issues")+"/field_list=id,name&format=json"
-    call = HTTParty.get("http://www.comicvine.com/api/issues?api_key=96c05be8131206ff5edd56dbdb9949ad7652dbf8&field_list=id,name,issue_number,description,image&filter=volume:#{volume.id}")
+  def issue_info(id)
+    call = HTTParty.get("http://www.comicvine.com/api/issues?api_key=96c05be8131206ff5edd56dbdb9949ad7652dbf8&field_list=id,name,issue_number,description,image&filter=volume:#{id}")
   end
 end
