@@ -1,20 +1,24 @@
-<div class="my-sub-title">
-  <h1>Your Titles Coming Out This Week</h1>
-</div>
-
-<% current_user.this_weeks_comics.each do |comic| %>
-  <div class="subscription-comic">
-    <div class="comic-image">
-      <img src="<%= comic["image"]["thumb_url"] %>" />
-    </div>
-    <div class="comic-issue-name">
-      <%= comic["name"] %>
-    </div>
-    <div class="comic-description" >
-      <%= strip_tags(comic["description"]) %>
-    </div>
+<div class="section">
+  <div class="my-sub-title">
+    <h1>Your Titles Coming Out This Week</h1>
   </div>
-<% end %>
 
-<%= "You don't have any subscriptions this week" if !current_user.this_weeks_comics %>
+  <% current_user.this_weeks_comics.each do |comic| %>
+    <div class="slide">
+      <div class="subscription-comic">
+        <div class="comic-image">
+          <img src="<%= comic["image"]["thumb_url"] %>" />
+        </div>
+        <div class="comic-issue-name">
+          <%= "#{comic["volume"]["name"]}: #{comic["name"]}" %>
+        </div>
+        <div class="comic-description" >
+          <%= strip_tags(comic["description"]) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= "You don't have any subscriptions this week" if !current_user.this_weeks_comics %>
+</div>
 

@@ -1,18 +1,26 @@
-<h1><%= @comic.name %></h1>
-
-<% @comic_info.each do |info| %>
-  <div class="subscription-comic">
-    <div class="comic-image">
-      <img src="<%= info["image"]["thumb_url"] %>" />
-    </div>
-    <div id="desc-pull" class="comic-issue-number">
-      <%= "##{info["issue_number"]}" %>
-    </div>
-    <div class="comic-issue-name">
-      <%= info["name"] %>
-    </div>
-    <div class="comic-description">
-      <%= strip_tags(info["description"]) %>
-    </div>
+<div id='fullpage'>
+  <div id='pull-comic-vol-name'>
+    <h1><%= @comic.name %></h1>
   </div>
-<% end %>
+
+  <% @comic_info.each_slice(2) do |slice| %>
+    <div class='section'>
+      <% slice.each do |info| %>
+        <div class="pull-subscription-comic">
+          <div class="comic-image">
+            <img src="<%= info["image"]["thumb_url"] %>" />
+          </div>
+          <div class="comic-issue-number">
+            <%= "##{info["issue_number"]}" %>
+          </div>
+          <div class="comic-issue-name">
+            <%= info["name"] %>
+          </div>
+          <div class="comic-description">
+            <%= strip_tags(info["description"]) %>
+          </div>
+        </div>
+      <% end %>  
+    </div>  
+  <% end %>
+</div>

@@ -12,4 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.slimscroll.min
+//= require jquery.fullPage.min
+//= require_self
+
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    scrollOverflow: true,
+    navigation: true,
+    navigationPosition: 'left',
+    slidesNavigation: true,
+    slidesNavPosition: 'bottom',
+  });    
+});

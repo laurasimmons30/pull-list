@@ -1,26 +1,30 @@
-<div class="weekly-subscriptions">
+<div id="fullpage">
   <%= render partial: 'user_subscription' if signed_in? %>
-</div>
+  
+  <div class="section">  
+    <div class='week-of-title'>
+      <h1>Comics for the Week of <%= Comic.comic_date(Date.today) %></h1>
+      <div id='week-of-description'>
+        <p>Check out all titles released this week</p>
+      </div>
+    </div>
+  </div> 
 
-<div class="weekly-comics">
-  <h1>Comics for the Week of <%= Comic.comic_date(Date.today) %></h1>
-
-  <div class='weekly-comics-table'>
-    <table class='table'>
-      <% @this_week_comics.each do |key, value| %>
-        <tbody class="publishers">
-          <tr>
-            <th><%= key %></th>
-          </tr>
-        </tbody>
+  <% @this_week_comics.each do |key, value| %>
+    <div class="section">
+      <div class='container-other-comics'>
+        <div class='publishers'>
+          <%= key %>
+        </div>
+        <div class="other-comics">
           <% value.each do |title, url| %>
-            <tbody class="table-comics">
-              <tr>
-                <td><%= link_to title, url %></td>
-              </tr>
-            </tbody>
-          <% end %>     
-      <% end %>
-    </table>
-  </div>
+            <div>
+              <p><%= link_to title, url %></p>
+            </div>
+          <% end %> 
+        </div>
+      </div>
+    </div>    
+  <% end %>
+
 </div>

@@ -11,7 +11,7 @@
       <div class="container">
         <ul class="top-bar-section">
           <% if signed_in? %>
-            <div class='username'> 
+            <div id='username'> 
               <%= current_user.username %>
             </div>
             <%= link_to 'Sign Out', sign_out_path, method: :delete %>
