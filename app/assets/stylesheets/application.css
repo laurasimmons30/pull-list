@@ -27,8 +27,14 @@ label {
   color: solid white;
 }
 
-body {
+html {
   font-family: 'Raleway', sans-serif;
+  /*background-image: url('http://www.preone0.com/emc/wp-content/uploads/2012/12/Grey-Background-BLANK-1024x640.png');*/
+  background: url(http://www.preone0.com/emc/wp-content/uploads/2012/12/Grey-Background-BLANK-1024x640.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /*index page */
@@ -39,11 +45,11 @@ body {
   margin: 0px auto;
   margin-top: -10%;
   height: 15rem;
-  border: black 1px solid;
   background-color: white;
   padding-top: 2%;
   padding-left: 4%;
   padding-right: 4%;
+  box-shadow: 8px 8px 5px #888888;
 }
 .comic-description {
   color: #black;
@@ -59,19 +65,24 @@ body {
   margin-left: 20px;
 }
 .my-sub-title {
-  color: #black;
+  color: white;
   text-align: center;
+  text-shadow: 1px 1px black;
+  font-size: 24px;
 }
 
 .weekly-comics {
-  color: #black;
+  color: black;
   border: red 1px solid;
 }
 
 /* index under my titles */
 
 .week-of-title {
+  color: white;
   text-align: center;
+  font-size: 24px;
+  text-shadow: 1px 1px black;
 }
 
 .container-other-comics {
@@ -81,10 +92,12 @@ body {
   background-color: white;
   width: 80%;
   margin: 0px auto;
+  box-shadow: 8px 8px 5px #888888;
 }
 
 .publishers {
   text-align: center;
+  font-size: 24px;
 }
 
 .other-comics {
@@ -123,13 +136,20 @@ body {
   width: 30%;
   margin-top: 15%;
   margin-left: 12.5%;
+  font-size: 22px;
+  margin-bottom: -5%;
 }
 
 .pull-subscription-comic {
   width: 75%;
   margin: 0px auto;
   height: 13rem;
-  margin-bottom: 18%;
+  margin-bottom: 10%;
+  margin-top: -5%;
+  background-color: white;
+  box-shadow: 8px 8px 5px #888888;
+  padding-top: 2%;
+  padding-right: 2%;
 }
 
 .comic-issue-name {
@@ -143,7 +163,7 @@ body {
 }
 
 .comic-issue-number {
-  color: #ffa742;
+  color: black;
   float: left;
   font-size: 20px;
   margin-left: 10%;
@@ -160,22 +180,34 @@ body {
 .add-comic-form {
   text-align: center;
   color: #ffdaa7;
+  text-shadow: 1px 1px black;
   font-size: 25px;
   margin-bottom: 10px;
+  width: 50%;
+  margin: 0px auto;
+  padding-bottom: 2%;
+  padding-top: 1%;
+  background-color: grey;
+  box-shadow: 3px 8px 5px black;
 }
 
 #comic-form-title {
   color: #fe6400;
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
   margin-bottom: 5px;
   position: relative;
+  text-shadow: 1px 1px black;
 }
 
 .comics-list {
   color: #ffa742;
   height: 80%;
   overflow: scroll;
+  width: 50%;
+  margin: 0px auto;
+  padding-top: 20px;
+  font-size: 18px;
 }
 
 #add-button {
