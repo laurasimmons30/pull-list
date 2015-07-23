@@ -10,11 +10,11 @@
     <div class="comic-issue-name">
       <%= comic["name"] %>
     </div>
-    <div class="comic-description">
+    <div class="comic-description" >
       <%= strip_tags(comic["description"]) %>
     </div>
   </div>
 <% end %>
 
 <%= "You don't have any subscriptions this week" if !current_user.this_weeks_comics %>
-<%= link_to 'Add to Pull List', new_comic_path %>
+

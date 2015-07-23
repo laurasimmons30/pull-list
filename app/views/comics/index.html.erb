@@ -5,16 +5,22 @@
 <div class="weekly-comics">
   <h1>Comics for the Week of <%= Comic.comic_date(Date.today) %></h1>
 
-  <table>
-    <% @this_week_comics.each do |key, value| %>
-      <tr>
-        <th><%= key %></th>
-      </tr>
-        <% value.each do |title, url| %>
-            <tr>
-              <td><%= link_to title, url %></td>
-            </tr>
+  <div class='weekly-comics-table'>
+    <table class='table'>
+      <% @this_week_comics.each do |key, value| %>
+        <tbody class="publishers">
+          <tr>
+            <th><%= key %></th>
+          </tr>
+        </tbody>
+          <% value.each do |title, url| %>
+            <tbody class="table-comics">
+              <tr>
+                <td><%= link_to title, url %></td>
+              </tr>
+            </tbody>
           <% end %>     
-    <% end %>
-  </table>
+      <% end %>
+    </table>
+  </div>
 </div>

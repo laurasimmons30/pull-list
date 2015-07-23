@@ -1,9 +1,9 @@
 <%= form_tag(comics_path, method: "post", ) do %>
   <% comics.each do |comic| %>
     <div>  
-      <%= check_box_tag("comicid_#{comic["id"]}", "#{comic["id"]}---#{comic["name"]}")  %>
+      <%= check_box_tag("comicid_#{comic["id"]}", "#{comic["id"]}---#{comic["name"]}") %>
       <%= comic["name"] %>
     </div>
   <% end %>
-  <%= submit_tag("Add to Pull List") %>
+  <%= submit_tag "Add to Pull List", :id => 'add-button' %>
 <% end %>

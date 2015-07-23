@@ -13,3 +13,129 @@
  *= require_tree .
  *= require_self
  */
+
+$white: #ffffff;
+$red: #ff0000;
+$pink: #ffc0cb;
+$black: #000000;
+$white: #ffffff;
+
+$new_black: #000;
+$new_pink: #555;
+
+label {
+  color: solid white;
+}
+
+body {
+  /*background-image: linear-gradient#242629,#414549;*/
+  background-image: linear-gradient(black, #333333);
+  font-family: 'Raleway', sans-serif;
+}
+
+.my-sub-title {
+  color: #fe6400;
+  position: relative;
+  text-align: center;
+}
+
+.comic-description {
+  color: #ffa742;
+  float: right;
+  margin-left: 10rem;
+  margin-right: 5rem;
+  margin-top: -7rem;
+}
+
+.weekly-comics {
+  color: #fe6400;
+  text-align: center;
+}
+
+.pull-list-title {
+  color: #fe6400;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: -1em;
+}
+
+.subscription-comic {
+  margin-bottom: 2rem;
+}
+
+.comic-name a:link{ 
+  color: #ffa742;
+  text-align: center;
+  font-size: 30px;
+  margin-left: 450px;
+}
+.comic-issue-name {
+  color: #ffdaa7;
+  font-style: italic;
+  font-size: 18px;
+  float: left;
+  margin-left: 12rem;
+  margin-right: 5rem;
+  margin-top: -8.85rem;
+}
+.comic-issue-number {
+  color: #ffa742;
+  float: left;
+  font-size: 20px;
+  margin-left: 10rem;
+  margin-right: 5rem;
+  margin-top: -9rem;
+}
+  
+.comic-name a:visited{
+    color: #ffa742;
+    margin-left: 450px;
+}
+
+h1 {
+  color: #fe6400;
+}
+
+.weekly-comics-table {
+  margin-left: 16%;
+}
+
+.table tbody .publishers {
+  border-bottom: 10%;
+}
+
+#username {
+  color: #ffa742;
+}
+
+.add-comic-form {
+  text-align: center;
+  color: #ffdaa7;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+#comic-form-title {
+  color: #fe6400;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.comics-list {
+  color: #ffa742;
+  margin-bottom: 10px;
+}
+
+#add-button {
+  margin-top: 10px;
+}
+
+.link-back a:link {
+  color: #ffdaa7;
+}
+
+.link-back a:visited {
+  color: #fe8400;
+}

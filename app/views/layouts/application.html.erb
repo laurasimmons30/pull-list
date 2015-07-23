@@ -10,15 +10,18 @@
     <div class="top-bar">
       <div class="container">
         <ul class="top-bar-section">
-          <% if signed_in? %> 
-            <%= current_user.username %></a></li>
-            <%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
+          <% if signed_in? %>
+            <div class='username'> 
+              <%= current_user.username %>
+            </div>
+            <%= link_to 'Sign Out', sign_out_path, method: :delete %>
           <% else %>
-            <li><%= link_to 'Sign In With Twitter', '/auth/twitter' %></li>
+            <%= link_to 'Sign In With Twitter', '/auth/twitter' %>
           <% end %>
+          <%= link_to 'My Pull List', comics_pull_list_path %>
+          <%= link_to "This Week's Comics", comics_path %>
+          <%= link_to 'Add to Pull List', new_comic_path %>
         </ul>
-        <%= link_to 'My Pull List', comics_pull_list_path %>
-        <%= link_to "This Week's Comics", comics_path %>
       </div>
     </div>
 

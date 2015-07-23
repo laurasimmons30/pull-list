@@ -24,7 +24,7 @@ class Comicvine
     comic_name = comic_name.gsub(' ', '%20')
     url = base_call("volumes")+"&field_list=id,name,start_year,publisher&filter=name:#{comic_name}&format=json"
     HTTParty.get(url)["results"].each do |vol|
-      vol["publisher"] = vol["publisher"]["name"]
+      vol["publisher"] = vol["publisher"] ? vol["publisher"]["name"] : "Unknown"
     end
   end
 

@@ -5,7 +5,6 @@ class ComicsController < ApplicationController
 
     array = ['MARVEL COMICS','DARK HORSE COMICS','DC COMICS','IDW PUBLISHING','IMAGE COMICS','BOOM! STUDIOS']
     @this_week_comics = comicscraper.new_comics_for_week('this-week', array)
-    @comics = current_user.comics if signed_in?
   end
 
   def create
@@ -15,10 +14,6 @@ class ComicsController < ApplicationController
       Usercomic.find_or_create_by(user_id: current_user.id, comic_id: comic.id)
     end
     redirect_to comics_path
-  end
-
-  def info
-    @comic = Comic.find(params[:id])
   end
 
   def pull_list
