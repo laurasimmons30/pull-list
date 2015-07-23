@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :usercomics
   has_many :comics, :through => :usercomics
+  validates_uniqueness_of :twitter_uid
 
   def this_weeks_comics
     cv = Comicvine.new
