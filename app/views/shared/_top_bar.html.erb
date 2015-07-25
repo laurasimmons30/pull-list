@@ -1,0 +1,17 @@
+<div class="top-bar">
+  <div class="top-bar-links">
+    <%= link_to "This Week's Comics", comics_path %>
+    <% if signed_in? %>
+      <%= link_to 'My Pull List', comics_pull_list_path %>
+      <%= link_to 'Add to Pull List', new_comic_path %>
+    <% end %>
+  </div>
+  <div id='username'> 
+    <% if signed_in? %>
+      <%= current_user.username %>
+      <%= link_to 'Sign Out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In With Twitter', '/auth/twitter' %>
+    <% end %>
+  </div>
+</div>
