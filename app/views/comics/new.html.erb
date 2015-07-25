@@ -3,7 +3,7 @@
   <%= form_tag(comics_search_path, method: :get, remote:true) do %>
     <%= label_tag(:comic_name, "Enter Name:") %>
     <%= text_field_tag(:comic_name) %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search", class: "form_submit" %>
   <% end %>
 </div>
 

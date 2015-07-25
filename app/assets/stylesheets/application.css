@@ -37,13 +37,40 @@ html {
   background-size: cover;
 }
 
+html #fp-nav ul li a span, html .fp-slidesNav ul li a span {
+  background-color: white;
+}
+
 /*index page */
+
+/*top bar*/
+.top-bar {
+  height: 40px;
+  background-color: white;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+#username {
+  float:right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.top-bar-links {
+  float:left;
+  margin-left: 15px;
+  margin-top: 10px;
+}
 
 /* my titles this week */
 .subscription-comic {
   width: 75%;
   margin: 0px auto;
-  margin-top: -10%;
+  margin-top: -260px;
   height: 15rem;
   background-color: white;
   padding-top: 2%;
@@ -51,6 +78,11 @@ html {
   padding-right: 4%;
   box-shadow: 8px 8px 5px #888888;
 }
+
+.fp-slidesNav.bottom {
+  border:red 1px solid;
+}
+
 .comic-description {
   color: #black;
   float:right;
@@ -58,17 +90,21 @@ html {
   text-align: justify;
   margin-right: 2%;
 }
+
 .comic-image img {
   float:left;
   vertical-align: middle;
   margin-top:24px;
   margin-left: 20px;
 }
+
 .my-sub-title {
   color: white;
   text-align: center;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
   font-size: 24px;
+  margin-top: 60px;
+
 }
 
 .weekly-comics {
@@ -93,26 +129,45 @@ html {
   width: 80%;
   margin: 0px auto;
   box-shadow: 8px 8px 5px #888888;
+  text-align: center;
+}
+
+.section-helper {
+  height: 60px;
 }
 
 .publishers {
-  text-align: center;
   font-size: 24px;
 }
 
 .other-comics {
-  width: 45%;
-  margin-left: 35%;
+  width: 40%;
   margin-top: 2%;
+  display: inline-block;
+
 }
 
+.other-comics-side {
+  display:inline-block;
+  width:100%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
 /* my pull list*/
 
 .pull-list-title {
-  color: #fe6400;
+  color: white;
   text-align: center;
-  font-size: 45px;
+  font-size: 35px;
   margin-bottom: -1em;
+  font-family: ubuntu;
+  text-shadow: 1px 1px black;
 }
 
 .comic-name a:link{ 
@@ -132,24 +187,24 @@ html {
 /* pull list show page */
 
 #pull-comic-vol-name {
-  color: #fe6400;
+  color: white;
   width: 30%;
-  margin-top: 15%;
   margin-left: 12.5%;
+  margin-top: 40px;
   font-size: 22px;
-  margin-bottom: -5%;
+  text-shadow: 2px 2px black;
 }
 
 .pull-subscription-comic {
   width: 75%;
   margin: 0px auto;
   height: 13rem;
-  margin-bottom: 10%;
-  margin-top: -5%;
+  margin-bottom: 30px;
   background-color: white;
   box-shadow: 8px 8px 5px #888888;
   padding-top: 2%;
   padding-right: 2%;
+  overflow: scroll;
 }
 
 .comic-issue-name {
@@ -169,11 +224,6 @@ html {
   margin-left: 10%;
   margin-right: 5rem;
 }
-  
-
-#username {
-  color: #ffa742;
-}
 
 /* add comic form */
 
@@ -185,6 +235,7 @@ html {
   margin-bottom: 10px;
   width: 50%;
   margin: 0px auto;
+  margin-top: 60px;
   padding-bottom: 2%;
   padding-top: 1%;
   background-color: grey;
@@ -192,24 +243,40 @@ html {
 }
 
 #comic-form-title {
-  color: #fe6400;
+  color: white;
   font-size: 35px;
   text-align: center;
   margin-bottom: 5px;
   position: relative;
-  text-shadow: 1px 1px black;
+  text-shadow: 1.5px 1.5px black;
 }
 
 .comics-list {
-  color: #ffa742;
-  height: 80%;
+  color: white;
+  height: 310px;
   overflow: scroll;
   width: 50%;
   margin: 0px auto;
   padding-top: 20px;
+  padding-bottom: 15px;
   font-size: 18px;
+  text-shadow: 1.5px 1.5px black;
 }
 
 #add-button {
   margin-top: 10px;
+}
+
+.form_submit {
+  color: white;
+  padding: 7px 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* IE10+ */
+  box-shadow: 1px 1px 5px black;
 }

@@ -7,12 +7,12 @@ class User < ActiveRecord::Base
     cv = Comicvine.new
 
     comics.map do |comic|
-      issue = cv.get_last_issue_for_volume(comic.api_key)
-      if issue["store_date"] == Comic.comic_date(Date.today) 
-        issue
-      else
-        nil
-      end
+      # issue = cv.get_last_issue_for_volume(comic.api_key)
+      # if issue["store_date"] == Comic.comic_date(Date.today) 
+      #   issue
+      # else
+      #   nil
+      # end
     end.compact
   end
 end

@@ -1,10 +1,15 @@
 <div id='fullpage'>
-  <div id='pull-comic-vol-name'>
-    <h1><%= @comic.name %></h1>
-  </div>
-
-  <% @comic_info.each_slice(2) do |slice| %>
+  <% @comic_info.each_slice(2).with_index do |slice, index| %>
     <div class='section'>
+      <% if index == 0 %>
+        <div id='pull-comic-vol-name'>
+          <h1><%= @comic.name %></h1>
+        </div>
+      <% else %>
+        <div class="section-helper">
+        </div>
+      <% end %>
+
       <% slice.each do |info| %>
         <div class="pull-subscription-comic">
           <div class="comic-image">

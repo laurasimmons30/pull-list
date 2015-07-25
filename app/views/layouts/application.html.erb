@@ -5,26 +5,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu|Raleway' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="container">
-        <ul class="top-bar-section">
-          <% if signed_in? %>
-            <div id='username'> 
-              <%= current_user.username %>
-            </div>
-            <%= link_to 'Sign Out', sign_out_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Sign In With Twitter', '/auth/twitter' %>
-          <% end %>
-          <%= link_to 'My Pull List', comics_pull_list_path %>
-          <%= link_to "This Week's Comics", comics_path %>
-          <%= link_to 'Add to Pull List', new_comic_path %>
-        </ul>
-      </div>
-    </div>
-
+    <%= render partial: 'shared/top_bar' %>
     <p id="notice">
       <%= flash[:notice] %>
     </p>

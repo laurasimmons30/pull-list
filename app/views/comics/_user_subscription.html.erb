@@ -1,13 +1,17 @@
 <div class="section">
   <div class="my-sub-title">
-    <h1>Your Titles Coming Out This Week</h1>
+    <% if current_user.this_weeks_comics.blank? %>
+      <h1>No Titles Coming Out This Week</h1>
+    <% else %>
+      <h1>Your Titles Coming Out This Week</h1>
+    <% end %>
   </div>
 
   <% current_user.this_weeks_comics.each do |comic| %>
     <div class="slide">
       <div class="subscription-comic">
         <div class="comic-image">
-          <img src="<%= comic["image"]["thumb_url"] %>" />
+          <img src="<%=  comic["image"]["thumb_url"] %>" />
         </div>
         <div class="comic-issue-name">
           <%= "#{comic["volume"]["name"]}: #{comic["name"]}" %>
@@ -18,7 +22,5 @@
       </div>
     </div>
   <% end %>
-
-  <%= "You don't have any subscriptions this week" if !current_user.this_weeks_comics %>
 </div>
 

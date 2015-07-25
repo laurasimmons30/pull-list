@@ -23,5 +23,7 @@ $(document).ready(function() {
     navigationPosition: 'left',
     slidesNavigation: true,
     slidesNavPosition: 'bottom',
+    scrollingSpeed: 600,
+    fitToSection: false,
   });    
 });
