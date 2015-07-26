@@ -9,10 +9,9 @@
   </head>
   <body>
     <%= render partial: 'shared/top_bar' %>
-    <p id="notice">
+    <span class="notice">
       <%= flash[:notice] %>
-    </p>
-
+    </span>
     <%= yield %>
 
   </body>

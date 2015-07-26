@@ -40,6 +40,14 @@ html #fp-nav ul li a span, html .fp-slidesNav ul li a span {
   background-color: white;
 }
 
+span.notice {
+  position: absolute;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
 /*index page */
 
 /*top bar*/
@@ -108,7 +116,6 @@ html #fp-nav ul li a span, html .fp-slidesNav ul li a span {
   text-shadow: 2px 2px black;
   font-size: 24px;
   margin-top: 60px;
-
 }
 
 .weekly-comics {
