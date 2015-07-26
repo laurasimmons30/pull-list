@@ -18,7 +18,7 @@
         <div class="other-comics-side">
           <% slices = value.each_slice(12) %>
           <% slices.with_index do |value, index|%>
-            <div class="other-comics <%= (index.odd? ? "right" : "left") unless slices.count == 1 %> ">
+            <div class="other-comics">
               <% value.each do |title, url| %>
                 <div>
                   <p><%= link_to title, url %></p>

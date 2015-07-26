@@ -1,11 +1,13 @@
-<div class="full-subscription">
+<div>
   <div class="my-sub-title">
     <h1>My Pull List</h1>
   </div>
 
-  <% @comics.each do |comic| %>
-    <div class="comic-name">
-      <%=link_to comic.name, controller: "comics", action: "pull_list_show", id: comic %>
-    </div>
-  <% end %>
+  <nav class='cl-effect-21 my-pull-list-container'>
+    <% @comics.each do |comic| %>
+      <div>
+        <%=link_to comic.name, controller: "comics", action: "pull_list_show", id: comic %>
+      </div>
+    <% end %>
+  </nav>
 </div>

@@ -2,7 +2,7 @@
   <% comics.each do |comic| %>
     <div>  
       <%= check_box_tag("comicid_#{comic["id"]}", "#{comic["id"]}---#{comic["name"]}") %>
-      <%= comic["name"] %>
+      <span><%= "#{comic["name"]} (#{comic["start_year"]})" %></span>
     </div>
   <% end %>
   <%= submit_tag "Add to List", id: 'add-button', class: "form_submit" %>

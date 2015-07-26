@@ -31,7 +31,7 @@ class ComicsController < ApplicationController
     query = params[:comic_name]
     comicvine = Comicvine.new
 
-    @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.reverse
+    @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse
     
     respond_to do |format|
       format.js { render "search.js.erb" }
