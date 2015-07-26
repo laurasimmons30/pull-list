@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20150726002625) do
   end
 
   create_table "issues", force: :cascade do |t|
-    t.string  "name",               null: false
-    t.string  "image_url",          null: false
-    t.string  "description",        null: false
-    t.integer "comic_id"
-    t.date    "comic_release_date"
+    t.string  "name"
+    t.string  "image_url"
+    t.string  "description"
+    t.integer "comic_id",           null: false
+    t.date    "comic_release_date", null: false
   end
 
   create_table "usercomics", force: :cascade do |t|

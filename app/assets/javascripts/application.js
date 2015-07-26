@@ -21,8 +21,6 @@ $(document).ready(function() {
     scrollOverflow: true,
     navigation: true,
     navigationPosition: 'left',
-    slidesNavigation: true,
-    slidesNavPosition: 'bottom',
     scrollingSpeed: 600,
     fitToSection: false,
   });    

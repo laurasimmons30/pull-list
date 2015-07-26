@@ -7,17 +7,17 @@
     <% end %>
   </div>
 
-  <% current_user.this_weeks_comics.each do |comic| %>
+  <% current_user.this_weeks_comics.each do |issue| %>
     <div class="slide">
       <div class="subscription-comic">
         <div class="comic-image">
-          <img src="<%=  comic["image"]["thumb_url"] %>" />
+          <img src=<%= issue.image_url %> />
         </div>
         <div class="comic-issue-name">
-          <%= "#{comic["volume"]["name"]}: #{comic["name"]}" %>
+          <%= "#{issue.comic.name}: #{issue.name}" %>
         </div>
         <div class="comic-description" >
-          <%= strip_tags(comic["description"]) %>
+          <%= strip_tags(issue.description) %>
         </div>
       </div>
     </div>

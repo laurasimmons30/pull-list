@@ -1,6 +1,7 @@
 class Comic < ActiveRecord::Base
   has_many :usercomics
   has_many :users, :through => :usercomics
+  has_many :issues
 
   def self.comic_date(date)
     if date.cwday < 4

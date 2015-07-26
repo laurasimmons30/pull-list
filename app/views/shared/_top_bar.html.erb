@@ -3,7 +3,7 @@
     <%= link_to "This Week's Comics", comics_path %>
     <% if signed_in? %>
       <%= link_to 'My Pull List', comics_pull_list_path %>
-      <%= link_to 'Add to Pull List', new_comic_path %>
+      <%= link_to '+', new_comic_path %>
     <% end %>
   </div>
   <div id='username'> 
