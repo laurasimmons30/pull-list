@@ -46,12 +46,13 @@ html #fp-nav ul li a span, html .fp-slidesNav ul li a span {
 /*top bar*/
 .top-bar {
   height: 40px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.3);
   position:fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
+  color: white;
 }
 
 #username {
@@ -126,13 +127,16 @@ html #fp-nav ul li a span, html .fp-slidesNav ul li a span {
 }
 
 .container-other-comics {
-  margin-top: -10%;
   padding-top: 2%;
   border: white 1px solid;
   width: 80%;
   margin: 0px auto;
   box-shadow: 8px 8px 5px black;
   text-align: center;
+}
+
+.fp-tableCell > .container-other-comics {
+  margin-top: -80px;
 }
 
 .container-other-comics a {
@@ -286,4 +290,30 @@ input:checked + span {
   background: -o-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* IE10+ */
   box-shadow: 1px 1px 5px black;
+}
+
+.add-button {
+  border: 1px solid #777;
+  box-shadow:  0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  font-size: 1em;
+  padding: .2em .2em 0 .2em;
+  width: 1em;
+  border-radius: .15em;
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.5);
+  color: black;
+}
+
+.add-button:hover {
+  background-color: rgba(255,255,255,0.7);
+
+}
+
+.nav-button-font {
+  font-weight: bold;
+}
+
+.signed-in-username {
+  margin-right: 15px;
 }

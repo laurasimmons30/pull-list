@@ -1,16 +1,8 @@
 <div id="fullpage">
   <%= render partial: 'user_subscription' if signed_in? %>
-  
-<!--   <div class="section">  
-    <div class='week-of-title'>
-      <h1>Comics for the Week of <% Comic.comic_date(Date.today) %></h1>
-    </div>
-  </div>  -->
 
   <% @this_week_comics.each do |key, value| %>
     <div class="section">
-      <div class="section-helper">
-      </div>
       <div class='container-other-comics'>
         <div class='publishers'>
           <%= key %>
@@ -28,6 +20,9 @@
           <% end %>
         </div>
       </div>
+      <% unless key == 'BOOM! STUDIOS' %>
+        <div class='section-helper'></div>
+      <% end %>
     </div>    
   <% end %>
 

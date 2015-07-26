@@ -1,17 +1,19 @@
 <div class="top-bar">
   <div class="top-bar-links">
-    <%= link_to "This Week's Comics", comics_path %>
+    <%= link_to "This Week", comics_path, class: 'add-button nav-button-font' %>
     <% if signed_in? %>
-      <%= link_to 'My Pull List', comics_pull_list_path %>
-      <%= link_to '+', new_comic_path %>
+      <%= link_to 'Pull List', comics_pull_list_path, class: 'add-button nav-button-font' %>
+      <%=raw link_to "\u2795", new_comic_path, class: 'add-button' %>
     <% end %>
   </div>
   <div id='username'> 
     <% if signed_in? %>
-      <%= current_user.username %>
-      <%= link_to 'Sign Out', sign_out_path, method: :delete %>
+      <span class="signed-in-username">
+        <%= current_user.username %>
+      </span>
+      <%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'add-button nav-button-font' %>
     <% else %>
-      <%= link_to 'Sign In With Twitter', '/auth/twitter' %>
+      <%= link_to 'Sign In With Twitter', '/auth/twitter', class: 'add-button nav-button-font' %>
     <% end %>
   </div>
 </div>
