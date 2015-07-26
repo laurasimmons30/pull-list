@@ -22,7 +22,7 @@
       See your comic titles released for the current week displayed once you sign in.
     </div>
     <div class="app-preview-image">
-      <%= image_tag(asset_url('preview-shot'), width: '700px')%>
+      <%= image_tag(asset_path('preview-shot.png'), width: '700px')%>
     </div>
   </div>
 
@@ -32,7 +32,7 @@
     </div>
     <div class='twitter-button'>
       <%= link_to '/auth/twitter' do %>
-        <%= image_tag(asset_url('twitter-sign-in')) %>
+        <%= image_tag(asset_path('twitter-sign-in.png')) %>
       <% end %>
     </div>
   </div>
