@@ -1,5 +1,6 @@
 <div id="fullpage">
   <%= render partial: 'user_subscription' if signed_in? %>
+  <%= render partial: 'login' if !signed_in? %>
 
   <% @this_week_comics.each do |key, value| %>
     <div class="section">

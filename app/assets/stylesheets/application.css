@@ -317,3 +317,69 @@ input:checked + span {
 .signed-in-username {
   margin-right: 15px;
 }
+
+/*login section*/
+
+.login-welcome {
+  color: white;
+  font-size: 2em;
+  text-shadow: 1.5px 1.5px black;
+  margin-top: -60px;
+}
+
+.login-welcome h1 {
+}
+
+.welcome-title {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.welcome-description {
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+#scroll-down {
+  text-align: center;
+  font-size: 50px;
+}
+
+.app-login {
+  color: white;
+  font-size: 3em;
+  text-shadow: 1.5px 1.5px black;
+  margin: 0px auto;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.twitter-button {
+  width: 14.6%;
+  margin: 0px auto;
+}
+
+.app-preview {
+  color: white;
+  font-size: 2em;
+  text-shadow: 1.5px 1.5px black;
+  text-align: center;
+  width: 80%;
+  margin: 0px auto;
+}
+
+.app-preview-image {
+  margin: 0px auto;
+  width: 65%;
+}
+
+.app-final-slide {
+  color: white;
+  font-size: 3em;
+  text-shadow: 1.5px 1.5px black;
+  margin-top: -60px;
+  text-align: center;
+  padding-bottom: 60px;
+}

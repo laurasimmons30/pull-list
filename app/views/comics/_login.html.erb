@@ -1,0 +1,40 @@
+<div class="section">
+  <div class="slide">
+    <div class="login-welcome">
+      <div class='welcome-title'>
+        <h1>Welcome to My Pull List</h1>
+      </div>
+      <div class='welcome-description'>
+        <p>Have you ever wished you had an app to easily keep up to date with your comic subscription? My Pull List makes it easy to add titles to your personal list, view individual issue details, and see which of your comics are being released for the current week.</p>
+      </div>
+
+      <div class="welcome-description scroll-down">
+        Scroll Down to See This Week's Comics
+      </div>
+      <div id="scroll-down">
+        <%= "\u1601" %>
+      </div>
+    </div>
+  </div>
+
+  <div class='slide'>
+    <div class='app-preview'>
+      See your comic titles released for the current week displayed once you sign in.
+    </div>
+    <div class="app-preview-image">
+      <%= image_tag('preview-shot', width: '700px')%>
+    </div>
+  </div>
+
+  <div class='slide'>
+    <div class='app-final-slide'>
+      Login to get started making your Pull List
+    </div>
+    <div class='twitter-button'>
+      <%= link_to '/auth/twitter' do %>
+        <%= image_tag('twitter-sign-in') %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
