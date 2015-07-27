@@ -390,3 +390,13 @@ input:checked + span {
   text-align: center;
   padding-bottom: 60px;
 }
+
+.fake-twitter {
+  margin: 0px auto;
+  width: 32%;
+  color: white;
+  text-shadow: 1.5px 1.5px black;
+  font-size: 1.5em;
+  padding-top: 2%;
+  text-align: center;
+}
