@@ -1,4 +1,4 @@
-==My-Pull-List
+#My-Pull-List
 
 ##About
 
@@ -7,7 +7,7 @@ My-Pull-List makes it easy to keep up to date with your comic subscriptions week
 ##Under the Hood
 
 * Twitter Oauth for secure sign in
-* Comics are always released on a Wednesday. The current week is determined from Monday to the following Sunday, by `self.comic_date(date)` method in the `comic.rb`[comic.rb](../app/models/comic.rb)
+* Comics are always released on a Wednesday. The current week is determined from Monday to the following Sunday, by `self.comic_date(date)` method in the `comic.rb` [comic.rb](/app/models/comic.rb)
 * When a user uses the search form to add to their pull list, a call is made to the Comicvine API for volumes, using the received `comic_name` param in the API fields `&field_list=id,name,start_year,publisher&filter=name:#{comic_name}&format=json` to return all results for that search. 
 * Results have a restraint of year greater than 2005 `volume["start_year"].to_i > 2005`, and are sorted with most recent at the top.
 * AJAX is used to render search results
@@ -19,7 +19,7 @@ My-Pull-List makes it easy to keep up to date with your comic subscriptions week
 
 ##ER Diagrams
 
-![ER Diagrams](https://www.dropbox.com/home?preview=Screen+Shot+2015-07-27+at+12.00.08+PM.png)
+![ER Diagrams](https://www.dropbox.com/s/8ulj7d68tzlonyy/Screen%20Shot%202015-07-27%20at%2012.00.08%20PM.png?dl=0)
 
 ##Next Steps
 * Continue modifying UI with javascript and images
