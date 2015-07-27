@@ -23,10 +23,12 @@ My-Pull-List makes it easy to keep up to date with your comic subscriptions week
 (http://i356.photobucket.com/albums/oo9/lsimm30/Screen%20Shot%202015-07-27%20at%2012.00.08%20PM_zpstepdlatg.png)
 ##Clone It
 
-```git clone git@github.com:laurasimmons30/pull-list.git pull-list
+```
+git clone git@github.com:laurasimmons30/pull-list.git pull-list
 cd pull-list
 bundle install
-rake db:create db:migrate```
+rake db:create db:migrate
+```
 
 ##Next Steps
 * Continue modifying UI with javascript and images
