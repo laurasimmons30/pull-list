@@ -49,7 +49,7 @@ group :development, :test do
   gem "capybara"
   gem 'poltergeist'
   gem "shoulda-matchers"
-  gem "factory_girl"
+  gem "factory_girl_rails"
   gem 'database_cleaner'
   gem 'pry-rails'
 end
