@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   it { should have_many(:usercomics) }
   it { should have_many(:comics).through(:usercomics) }
 
-  # it { should validate_uniqueness_of(:twitter_uid) }
+   it { should validate_uniqueness_of(:twitter_uid) }
 
   it "is valid username, and twitter_uid" do
     user = User.new(
