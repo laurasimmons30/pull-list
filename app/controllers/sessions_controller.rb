@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_or_create_by(twitter_uid: auth_hash["uid"], username: auth_hash["info"]["nickname"])
+    # user = User.find_or_create_by(twitter_uid: auth_hash["uid"], username: auth_hash["info"]["nickname"])
     session[:user_id] = user.id
     flash[:notice] = 'You have successfully signed in'
     

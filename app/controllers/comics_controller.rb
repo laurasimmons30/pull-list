@@ -1,4 +1,5 @@
 class ComicsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     comicscraper = Comicscraper.new
     comicvine = Comicvine.new
