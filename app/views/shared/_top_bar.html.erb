@@ -11,9 +11,8 @@
       <span class="signed-in-username">
         <%= current_user.username %>
       </span>
-      <%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'add-button nav-button-font' %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'add-button nav-button-font' %>
     <% else %>
-      <%= link_to 'Sign In With Twitter', '/auth/twitter', class: 'add-button nav-button-font' %>
       <%= link_to 'Sign In', user_session_path, class: 'add-button nav-button-font' %>
     <% end %>
   </div>

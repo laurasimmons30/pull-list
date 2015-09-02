@@ -4,7 +4,7 @@ class AddOmniauthToUsers < ActiveRecord::Migration
     add_index :users, :provider
     add_column :users, :uid, :string
     add_index :users, :uid
-    remove_column :users, :username
-    remove_column :users, :twitter_uid
+    remove_column :users, :username, :string
+    remove_column :users, :twitter_uid, :string
   end
 end

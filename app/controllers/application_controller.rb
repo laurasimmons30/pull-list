@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :signed_in?
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
@@ -7,15 +6,6 @@ class ApplicationController < ActionController::Base
   Dir['app/services/*.rb'].each do |f|
     basename = File.basename(f)
     require_relative "../services/#{basename}"
-  end
-
-  # current user helper
-  def current_user
-    @current_user ||= User.where(id: session[:user_id]).first
-  end
-
-  def signed_in?
-    current_user.present?
   end
 
   def authenticate!
