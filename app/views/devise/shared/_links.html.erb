@@ -1,5 +1,7 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <div class="sign_up_button">
+    <%= link_to "Already have account? Sign in", new_session_path(resource_name) %><br />
+  </div>
 <% end -%>
 
 
