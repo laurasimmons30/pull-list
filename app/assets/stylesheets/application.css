@@ -426,3 +426,54 @@ input:checked + span {
   text-align: center;
 }
 
+.sign_up_button {
+  display: block;
+  height: 35px;
+  width: 300px;
+  background: white;
+  border: 1px solid white;
+  text-align: center;
+  color: black;
+  margin: 0px auto;
+  margin-top: 30px;
+  padding-top: 7px;
+  font-weight: bold;
+}
+
+.sign_up_button a {
+  text-decoration: none;
+  color: black;
+}
+
+#twitter_button {
+  margin-top: 20px;
+  background: #59aeee;
+  border: none;
+}
+
+#twitter_button a {
+  color: white;
+}
+
+.password {
+  height: 35px;
+  width:300px;
+  margin:0px auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.password a {
+  color: white;
+}
+
+.login-title {
+  color: white;
+  height: 35px;
+  width: 300px;
+  margin: 0px auto;
+  margin-top: 35px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
