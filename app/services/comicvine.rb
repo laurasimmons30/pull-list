@@ -23,7 +23,10 @@ class Comicvine
     #returns array of ids and volumes [[773, "Superman"],[776, "Magic Comics"]]
     comic_name = comic_name.gsub(' ', '%20')
     url = base_call("volumes")+"&field_list=id,name,start_year,publisher&filter=name:#{comic_name}&format=json"
-    puts HTTParty.get(url).keys
+    puts "THIS IS THE COMIC NAME: #{comic_name}"
+    puts "THIS IS THE URL: #{url}"
+    puts "THIS IS THE THINGY"
+    puts HTTParty.get(url)
     HTTParty.get(url)["results"].each do |vol|
       vol["publisher"] = vol["publisher"] ? vol["publisher"]["name"] : "Unknown"
     end
