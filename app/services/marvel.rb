@@ -20,7 +20,7 @@ class Marvel
   end
 
   def series_search
-    url = base_call("series", comic_series())
+    HTTParty.getbase_call("series", comic_series("#{series_name_input}")) 
   end
 
 end

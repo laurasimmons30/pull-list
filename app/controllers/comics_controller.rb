@@ -3,6 +3,7 @@ class ComicsController < ApplicationController
   def index
     comicscraper = Comicscraper.new
     comicvine = Comicvine.new
+    marvel = Marvel.new
 
     array = ['MARVEL COMICS','DARK HORSE COMICS','DC COMICS','IDW PUBLISHING','IMAGE COMICS','BOOM! STUDIOS']
     @this_week_comics = comicscraper.new_comics_for_week('this-week', array)
@@ -23,16 +24,19 @@ class ComicsController < ApplicationController
 
   def pull_list_show
     @comic = Comic.find(params["id"])
-    comicvine = Comicvine.new
-    @comic_info = comicvine.issue_info(@comic.api_key.to_i)
-    @comic_info = @comic_info["response"]["results"]["issue"]
+    marvel = Marvel.new
+    # @comic_info = marvel.
+    # comicvine = Comicvine.new
+    # @comic_info = comicvine.issue_info(@comic.api_key.to_i)
+    # @comic_info = @comic_info["response"]["results"]["issue"]
   end
 
   def search
     query = params[:comic_name]
-    comicvine = Comicvine.new
-
-    @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse
+    # comicvine = Comicvine.new
+    marvel = Marvel.new
+    @comics = marvel.series_search(query).select { |series|}
+    # @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse
     
     respond_to do |format|
       format.js { render "search.js.erb" }
