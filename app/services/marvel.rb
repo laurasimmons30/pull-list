@@ -2,9 +2,9 @@ class Marvel
   require 'digest'
 
   md5 = Digest::MD5.new
-  md5 << Time.now
-  md5 << ENV['MARVELKEY']
-  md5 << ENV['MARVEL_SECRET_KEY']
+  md5 << (Time.now).to_s
+  md5 << (ENV['MARVELKEY'] + ENV['MARVEL_SECRET_KEY'])
+  # md5 << ENV['MARVEL_SECRET_KEY']
   md5.hexdigest
 
   def initialize

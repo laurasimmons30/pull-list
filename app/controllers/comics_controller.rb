@@ -33,6 +33,7 @@ class ComicsController < ApplicationController
 
   def search
     query = params[:comic_name]
+    binding.pry
     # comicvine = Comicvine.new
     marvel = Marvel.new
     @comics = marvel.series_search(query).select { |series|}
