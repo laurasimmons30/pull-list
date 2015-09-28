@@ -32,11 +32,19 @@ class ComicsController < ApplicationController
   end
 
   def search
+    @client = Marvel::Client.new
+
+    @client.configure do |config|
+      config.api_key = ENV['MARVELKEY']
+      config.private_key = ENV['MARVEL_SECRET_KEY']
+    end
+
     query = params[:comic_name]
-    binding.pry
+    @client.series(titleStartsWith: query, orderBy: '-startYear', limit: 25 )
     # comicvine = Comicvine.new
-    marvel = Marvel.new
-    @comics = marvel.series_search(query).select { |series|}
+    # marvel = Marvel.new
+    binding.pry
+    # @comics = marvel.series_search(query).select { |series|}
     # @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse
     
     respond_to do |format|
