@@ -16,26 +16,34 @@ class User < ActiveRecord::Base
   end
 
   def this_weeks_comics
-    cv = Comicvine.new
+    set_marvel_client
 
     comics.map do |comic|
-      issue = comic.issues.where(comic_release_date: Comic.comic_date(Date.today)).first
+      stored_issue = comic.issues.where(comic_release_date: Comic.comic_date(Date.today)).first
 
-      if issue.blank?
-        issue = cv.get_last_issue_for_volume(comic.api_key)
-        if issue["store_date"] == Comic.comic_date(Date.today)
+      if stored_issue.blank?
+        issue = @client.series_comics(comic.api_key, dateDescriptor:'thisWeek').first
+        unless issue.blank?
           desc = issue["description"]
-          image = issue["image"]["thumb_url"]
-          name = issue["name"]
+          image = "#{issue['images'].first['path']}.#{issue['images'].first['extension']}"
+          name = issue["title"]
 
           Issue.find_or_create_by(comic_id: comic.id, comic_release_date: Comic.comic_date(Date.today),
                     name: name, description: desc, image_url: image)
-        else
-          nil
         end
       else
-        issue
+        stored_issue
       end
     end.compact
+  end
+
+  private
+  def set_marvel_client
+    @client = Marvel::Client.new
+
+    @client.configure do |config|
+      config.api_key = ENV['MARVELKEY']
+      config.private_key = ENV['MARVEL_SECRET_KEY']
+    end
   end
 end

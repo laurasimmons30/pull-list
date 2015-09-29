@@ -3,7 +3,7 @@ class ComicsController < ApplicationController
   def index
     comicscraper = Comicscraper.new
 
-    array = ['MARVEL COMICS','DARK HORSE COMICS','DC COMICS','IDW PUBLISHING','IMAGE COMICS','BOOM! STUDIOS']
+    array = ['MARVEL COMICS']
     @this_week_comics = comicscraper.new_comics_for_week('this-week', array)
   end
 
