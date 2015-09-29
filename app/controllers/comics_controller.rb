@@ -35,7 +35,7 @@ class ComicsController < ApplicationController
     set_marvel_client
 
     query = params[:comic_name]
-    @comics = @client.series(titleStartsWith: query, orderBy: '-startYear', limit: 50 )
+    @comics = @client.series(titleStartsWith: query, orderBy: '-startYear', limit: 100 )
     # comicvine = Comicvine.new
     # marvel = Marvel.new
     # @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse    

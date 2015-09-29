@@ -2,10 +2,17 @@
   <h2><%= @comic_info.first["title"] %></h2>
   <% @comic_list.each do |comic_list| %>
     <div class='section'>
-      <%= comic_list['title'] %> 
-      <%= comic_list['issueNumber'] %>
-      <%= comic_list['description'] %>
-      <img src=<%= "#{comic_list['images'].first['path']}.#{comic_list['images'].first['extension']}" %> />
+      <div class="pull-subscription-comic">
+        <div id='pull-comic-vol-name'>
+          <%= comic_list['title'] %>
+        </div>
+        <div class="comic-show-description">
+          <%= strip_tags(comic_list['description']) %>
+        </div>
+        <div class="comic-image">
+          <img src=<%= "#{comic_list['images'].first['path']}.#{comic_list['images'].first['extension']}" %> />
+        </div>
+      </div>
     </div>
   <% end %>
 

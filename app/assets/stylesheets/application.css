@@ -103,11 +103,10 @@ span.notice {
 }
 
 .comic-image img {
-  float:left;
-  vertical-align: middle;
-  margin-top:15px;
-  margin-left: 20px;
-  padding-bottom: 2%;
+  height: 200px;
+  margin: 0px auto;
+  margin-left: 25px;
+  margin-top: -30px;
 }
 
 .my-sub-title {
@@ -203,11 +202,11 @@ input:checked + span {
 
 #pull-comic-vol-name {
   color: white;
-  width: 30%;
-  margin-left: 12.5%;
-  margin-top: 40px;
+  width: 60%;
+  margin: 0px auto;
   font-size: 22px;
   text-shadow: 2px 2px black;
+  margin-left: 250px;
 }
 
 .pull-subscription-comic {
@@ -215,13 +214,17 @@ input:checked + span {
   color: white;
   text-shadow: 1.5px 1.5px black;
   margin: 0px auto;
-  height: 13rem;
+  height: 14.75rem;
   margin-bottom: 30px;
   border: white 1px solid;
   box-shadow: 8px 8px 5px black;
   padding-top: 2%;
   padding-right: 2%;
   overflow: scroll;
+}
+
+.title-descrp-container {
+  border: 1px red solid;
 }
 
 .comic-issue-name {
@@ -241,6 +244,16 @@ input:checked + span {
   margin-left: 10%;
   margin-right: 5rem;
   padding-top: 1%;
+}
+
+.comic-show-description {
+  color: #black;
+  float:right;
+  width: 60%;
+  text-align: justify;
+  margin-right: 15%;
+  padding-top: 1.5%;
+
 }
 
 /* add comic form */
