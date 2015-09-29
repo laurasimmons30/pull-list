@@ -1,31 +1,42 @@
 <div id='fullpage'>
-  <% @comic_info.each_slice(2).with_index do |slice, index| %>
+  <h2><%= @comic_info.first["title"] %></h2>
+  <% @comic_list.each do |comic_list| %>
+  <% binding.pry %>
     <div class='section'>
-      <% if index == 0 %>
+      <%= comic_list['title'] %> 
+      <%= comic_list['issueNumber'] %>
+      <%= comic_list['description'] %>
+    </div>
+  <% end %>
+
+
+<!--   <#% @comic_info.each_slice(2).with_index do |slice, index| %>
+    <div class='section'>
+      <#% if index == 0 %>
         <div id='pull-comic-vol-name'>
-          <h1><%= @comic.name %></h1>
+          <h1><#%= @comic.name %></h1>
         </div>
-      <% else %>
+      <#% else %>
         <div class="section-helper">
         </div>
-      <% end %>
+      <#% end %>
 
-      <% slice.each do |info| %>
+      <#% slice.each do |info| %>
         <div class="pull-subscription-comic">
           <div class="comic-image">
-            <img src="<%= info["image"]["thumb_url"] %>" />
+            <img src="<#%= info["image"]["thumb_url"] %>" />
           </div>
           <div class="comic-issue-number">
-            <%= "##{info["issue_number"]}" %>
+            <#%= "##{info["issue_number"]}" %>
           </div>
           <div class="comic-issue-name">
-            <%= info["name"] %>
+            <#%= info["name"] %>
           </div>
           <div class="comic-description">
-            <%= strip_tags(info["description"]) %>
+            <#%= strip_tags(info["description"]) %>
           </div>
         </div>
-      <% end %>  
+      <#% end %>  
     </div>  
-  <% end %>
+  <#% end %> -->
 </div>

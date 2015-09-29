@@ -24,9 +24,10 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params["id"])
     set_marvel_client
 
-    binding.pry
     @comic_info = @client.serie(@comic.api_key)
-    @client.series_comics(@comic_info(@comic.first["id"]))
+    @comic_list = @client.series_comics(@comic.api_key)
+    # @comic_info .first["title"]
+
     # @comic_info = @comic_info["response"]["results"]["issue"]
   end
 
