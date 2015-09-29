@@ -1,11 +1,11 @@
 <div id='fullpage'>
   <h2><%= @comic_info.first["title"] %></h2>
   <% @comic_list.each do |comic_list| %>
-  <% binding.pry %>
     <div class='section'>
       <%= comic_list['title'] %> 
       <%= comic_list['issueNumber'] %>
       <%= comic_list['description'] %>
+      <img src=<%= "#{comic_list['images'].first['path']}.#{comic_list['images'].first['extension']}" %> />
     </div>
   <% end %>
 
