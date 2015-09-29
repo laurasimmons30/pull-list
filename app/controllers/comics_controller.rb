@@ -2,8 +2,6 @@ class ComicsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
     comicscraper = Comicscraper.new
-    comicvine = Comicvine.new
-    marvel = Marvel.new
 
     array = ['MARVEL COMICS','DARK HORSE COMICS','DC COMICS','IDW PUBLISHING','IMAGE COMICS','BOOM! STUDIOS']
     @this_week_comics = comicscraper.new_comics_for_week('this-week', array)
@@ -24,36 +22,39 @@ class ComicsController < ApplicationController
 
   def pull_list_show
     @comic = Comic.find(params["id"])
-    marvel = Marvel.new
-    # @comic_info = marvel.
-    # comicvine = Comicvine.new
-    # @comic_info = comicvine.issue_info(@comic.api_key.to_i)
+    set_marvel_client
+
+    binding.pry
+    @comic_info = @client.serie(@comic.api_key)
+    @client.series_comics(@comic_info(@comic.first["id"]))
     # @comic_info = @comic_info["response"]["results"]["issue"]
   end
 
   def search
-    @client = Marvel::Client.new
-
-    @client.configure do |config|
-      config.api_key = ENV['MARVELKEY']
-      config.private_key = ENV['MARVEL_SECRET_KEY']
-    end
+    set_marvel_client
 
     query = params[:comic_name]
-    @client.series(titleStartsWith: query, orderBy: '-startYear', limit: 25 )
+    @comics = @client.series(titleStartsWith: query, orderBy: '-startYear', limit: 50 )
     # comicvine = Comicvine.new
     # marvel = Marvel.new
-    binding.pry
-    # @comics = marvel.series_search(query).select { |series|}
-    # @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse
-    
+    # @comics = comicvine.volume_ids(query).select { |volume| volume["start_year"].to_i > 2005 }.sort_by { |vol| vol["start_year"]}.reverse    
     respond_to do |format|
       format.js { render "search.js.erb" }
     end
   end
 
   private
+
   def comic_volume_info
     params.select { |key, value| key.include?('comicid_') }.values
+  end
+
+  def set_marvel_client
+    @client = Marvel::Client.new
+
+    @client.configure do |config|
+      config.api_key = ENV['MARVELKEY']
+      config.private_key = ENV['MARVEL_SECRET_KEY']
+    end
   end
 end
