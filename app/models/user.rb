@@ -20,9 +20,8 @@ class User < ActiveRecord::Base
 
     comics.map do |comic|
       stored_issue = comic.issues.where(comic_release_date: Comic.comic_date(Date.today)).first
-
       if stored_issue.blank?
-        issue = @client.series_comics(comic.api_key, dateDescriptor:'thisWeek').first
+        issue = @client.series_comics(comic.api_key, dateDescriptor:'thisWeek').try(:first) || nil
         unless issue.blank?
           desc = issue["description"]
           image = "#{issue['images'].first['path']}.#{issue['images'].first['extension']}"

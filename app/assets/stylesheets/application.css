@@ -505,3 +505,7 @@ input:checked + span {
 #password-reset {
   width: 500px;
 }
+
+.marvel-api-copywrite {
+  color: white;
+}
