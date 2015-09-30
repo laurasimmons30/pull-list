@@ -26,6 +26,8 @@ class ComicsController < ApplicationController
 
     @comic_info = @client.serie(@comic.api_key)
     @comic_list = @client.series_comics(@comic.api_key)
+    
+    @comic_list = @comic_list.try(:first) ? @comic_list : []
     # @comic_info .first["title"]
 
     # @comic_info = @comic_info["response"]["results"]["issue"]
